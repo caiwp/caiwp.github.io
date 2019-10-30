@@ -3,27 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://caiwp.github.io/tags/go/</loc>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://caiwp.github.io/post/golang%E5%88%A9%E7%94%A8pprof%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://caiwp.github.io/post/</loc>
-    <lastmod>2019-10-29T23:56:28+08:00</lastmod>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://caiwp.github.io/tags/</loc>
-    <lastmod>2019-10-29T23:56:28+08:00</lastmod>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://caiwp.github.io/</loc>
-    <lastmod>2019-10-29T23:56:28+08:00</lastmod>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://caiwp.github.io/post/hello/</loc>
-    <lastmod>2019-10-29T23:56:28+08:00</lastmod>
+    <loc>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-10-30T15:40:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://caiwp.github.io/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <lastmod>2019-10-30T15:24:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://caiwp.github.io/post/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <lastmod>2019-10-30T15:24:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://caiwp.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2019-10-30T15:00:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://caiwp.github.io/post/%E7%81%AB%E7%84%B0%E5%9B%BE/</loc>
+    <lastmod>2019-10-30T15:00:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://caiwp.github.io/post/hello/</loc>
     <lastmod>2019-10-29T23:56:28+08:00</lastmod>
   </url>
   

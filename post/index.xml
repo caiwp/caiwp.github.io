@@ -6,10 +6,42 @@
     <description>Recent content in Posts on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Oct 2019 23:56:28 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 15:40:45 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang 利用 pprof 定位问题</title>
+      <link>https://caiwp.github.io/post/golang%E5%88%A9%E7%94%A8pprof%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 30 Oct 2019 15:40:45 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/golang%E5%88%A9%E7%94%A8pprof%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98/</guid>
+      <description>在代码中引入 _ &amp;ldquo;net/http/pprof&amp;rdquo; 并监听 http 服务后
+通过终端查看 go tool pprof http://127.0.0.1:9191/debug/pprof/heap 通过浏览器查看 http://127.0.0.1:9191/debug/pprof/  </description>
+    </item>
+    
+    <item>
+      <title>树莓派</title>
+      <link>https://caiwp.github.io/post/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+      <pubDate>Wed, 30 Oct 2019 15:24:24 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E6%A0%91%E8%8E%93%E6%B4%BE/</guid>
+      <description> 连接隐藏wifi网络 https://blog.csdn.net/Tang_Chuanlin/article/details/87802830
+vi /etc/wpa_supplicant/wpa_supplicant.conf 在文件底部添加： network={ ssid=”wifi_name” scan_ssid=1 psk=”wifi_password” } 关键是ssid_scan=1这一句，加上后才能扫描到隐藏的wifi网络。之后保存退出（ctrl+o保存，ctrl+x退出）nano编辑器，reboot重启即可。  源 (可忽视) https://blog.csdn.net/qq_41589031/article/details/83058095
+vi /etc/apt/sources.list deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi vi /etc/apt/sources.list.d/raspi.list deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main  sshd https://blog.csdn.net/qq813480700/article/details/71597808
+/etc/init.d/ssh start 在终端命令行中启动SSH服务后，如果系统重启或关机后启动，SSH服务默认是关闭的，依然需要手动启动，为了方便可以设置SSH服务开机自动启动，打开/etc/rc.local文件，在语句exit 0之前加入： /etc/init.d/ssh start  zsh https://mlapp.cn/310.html
+sudo apt-get install zsh cd ~ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh  </description>
+    </item>
+    
+    <item>
+      <title>火焰图</title>
+      <link>https://caiwp.github.io/post/%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
+      <pubDate>Wed, 30 Oct 2019 15:00:30 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
+      <description> 安装 安装基本工具 git clone https://github.com/brendangregg/FlameGraph.git cp flamegraph.pl /usr/local/bin/ flamegraph.pl -h go get -v -u github.com/uber/go-torch go-torch -h brew install graphviz  使用 代码监听 http 服务 _ &amp;quot;net/http/pprof&amp;quot;  压测 # TODO 不同服务不同操作  压测同时获取数据 go-torch -u http://localhost:9191 -t 30  </description>
+    </item>
     
     <item>
       <title>搭建博客</title>

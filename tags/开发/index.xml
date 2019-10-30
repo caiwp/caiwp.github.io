@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on Terminal</title>
+    <link>https://caiwp.github.io/tags/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 30 Oct 2019 15:00:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://caiwp.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>火焰图</title>
+      <link>https://caiwp.github.io/post/%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
+      <pubDate>Wed, 30 Oct 2019 15:00:30 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
+      <description> 安装 安装基本工具 git clone https://github.com/brendangregg/FlameGraph.git cp flamegraph.pl /usr/local/bin/ flamegraph.pl -h go get -v -u github.com/uber/go-torch go-torch -h brew install graphviz  使用 代码监听 http 服务 _ &amp;quot;net/http/pprof&amp;quot;  压测 # TODO 不同服务不同操作  压测同时获取数据 go-torch -u http://localhost:9191 -t 30  </description>
+    </item>
+    
+  </channel>
+</rss>
