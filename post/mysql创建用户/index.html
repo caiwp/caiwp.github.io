@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Mysql创建用户 :: Terminal — My blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html
+创建用户 create user zhangsan identified by &#39;zhangsan&#39;; 开权限 grant all privileges on zhangsanDb.* to zhangsan@&#39;%&#39; identified by &#39;zhangsan&#39;; flush privileges; 查看权限 show grants for &#39;zhangsan&#39;; 更新密码 update mysql.user set password = password(&#39;zhangsannew&#39;) where user = &#39;zhangsan&#39; and host = &#39;%&#39;; flush privileges; 删除用户 drop user zhangsan@&#39;%&#39;;  "/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://caiwp.github.io/post/mysql%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7/" />
+
+
+<link rel="stylesheet" href="https://caiwp.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://caiwp.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://caiwp.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Mysql创建用户 :: Terminal — My blog" />
+<meta name="twitter:description" content="https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html
+创建用户 create user zhangsan identified by &#39;zhangsan&#39;; 开权限 grant all privileges on zhangsanDb.* to zhangsan@&#39;%&#39; identified by &#39;zhangsan&#39;; flush privileges; 查看权限 show grants for &#39;zhangsan&#39;; 更新密码 update mysql.user set password = password(&#39;zhangsannew&#39;) where user = &#39;zhangsan&#39; and host = &#39;%&#39;; flush privileges; 删除用户 drop user zhangsan@&#39;%&#39;;  " />
+<meta name="twitter:site" content="https://caiwp.github.io" />
+<meta name="twitter:creator" content="WenpiCai" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Mysql创建用户 :: Terminal — My blog">
+<meta property="og:description" content="https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html
+创建用户 create user zhangsan identified by &#39;zhangsan&#39;; 开权限 grant all privileges on zhangsanDb.* to zhangsan@&#39;%&#39; identified by &#39;zhangsan&#39;; flush privileges; 查看权限 show grants for &#39;zhangsan&#39;; 更新密码 update mysql.user set password = password(&#39;zhangsannew&#39;) where user = &#39;zhangsan&#39; and host = &#39;%&#39;; flush privileges; 删除用户 drop user zhangsan@&#39;%&#39;;  " />
+<meta property="og:url" content="https://caiwp.github.io/post/mysql%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7/" />
+<meta property="og:site_name" content="Mysql创建用户" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-10-31 17:53:45 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://caiwp.github.io/post/mysql%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7/">Mysql创建用户</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2019-10-31
+    </span>
+    
+    
+    <span class="post-author">::
+      WenpiCai
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+    
+    #<a href="https://caiwp.github.io/tags/mysql/">mysql</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p><a href="https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html">https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html</a></p>
+
+<pre><code class="language-mysql">创建用户
+create user zhangsan identified by 'zhangsan';
+开权限
+grant all privileges on zhangsanDb.* to zhangsan@'%' identified by 'zhangsan';
+flush privileges;
+查看权限
+show grants for 'zhangsan';
+更新密码
+update mysql.user set password = password('zhangsannew') where user = 'zhangsan' and host = '%';
+flush privileges;
+删除用户
+drop user zhangsan@'%';
+</code></pre>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://caiwp.github.io/post/go%E6%AF%94%E8%BE%83float/">
+          <span class="button__text">Go比较float</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://caiwp.github.io/assets/main.js"></script>
+<script src="https://caiwp.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
