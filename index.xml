@@ -6,10 +6,20 @@
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 30 Oct 2019 15:40:45 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 16:11:19 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go比较float</title>
+      <link>https://caiwp.github.io/post/go%E6%AF%94%E8%BE%83float/</link>
+      <pubDate>Thu, 31 Oct 2019 16:11:19 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/go%E6%AF%94%E8%BE%83float/</guid>
+      <description> 直接比较是会有坑，需要进行减去取绝对值的有效范围如
+func almostEqual(a, b float64) bool { return math.Abs(a-b) &amp;lt;= 0.001 }   </description>
+    </item>
     
     <item>
       <title>Golang 利用 pprof 定位问题</title>
