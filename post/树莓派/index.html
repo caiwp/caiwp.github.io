@@ -149,7 +149,7 @@ sudo apt-get install zsh cd ~ wget https://github.com/robbyrussell/oh-my-zsh/raw
 
 <p><a href="https://blog.csdn.net/Tang_Chuanlin/article/details/87802830">https://blog.csdn.net/Tang_Chuanlin/article/details/87802830</a></p>
 
-<pre><code class="language-sh">vi /etc/wpa_supplicant/wpa_supplicant.conf
+<pre><code class="language-bash">vi /etc/wpa_supplicant/wpa_supplicant.conf
 
 在文件底部添加：
 network={
@@ -164,7 +164,7 @@ psk=”wifi_password”
 
 <p><a href="https://blog.csdn.net/qq_41589031/article/details/83058095">https://blog.csdn.net/qq_41589031/article/details/83058095</a></p>
 
-<pre><code class="language-sh">vi /etc/apt/sources.list
+<pre><code class="language-bash">vi /etc/apt/sources.list
 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
 
 vi /etc/apt/sources.list.d/raspi.list
@@ -175,7 +175,7 @@ deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main
 
 <p><a href="https://blog.csdn.net/qq813480700/article/details/71597808">https://blog.csdn.net/qq813480700/article/details/71597808</a></p>
 
-<pre><code class="language-sh">/etc/init.d/ssh start
+<pre><code class="language-bash">/etc/init.d/ssh start
 在终端命令行中启动SSH服务后，如果系统重启或关机后启动，SSH服务默认是关闭的，依然需要手动启动，为了方便可以设置SSH服务开机自动启动，打开/etc/rc.local文件，在语句exit 0之前加入：
 /etc/init.d/ssh start
 </code></pre>
@@ -184,7 +184,7 @@ deb http://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/ buster main
 
 <p><a href="https://mlapp.cn/310.html">https://mlapp.cn/310.html</a></p>
 
-<pre><code class="language-sh">sudo apt-get install zsh
+<pre><code class="language-bash">sudo apt-get install zsh
 cd ~
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 </code></pre>

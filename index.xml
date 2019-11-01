@@ -6,10 +6,31 @@
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 31 Oct 2019 17:53:45 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 15:47:45 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux命令pkill</title>
+      <link>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pkill/</link>
+      <pubDate>Fri, 01 Nov 2019 15:47:45 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pkill/</guid>
+      <description>https://man.linuxde.net/pkill
+pkill命令可以按照进程名杀死进程。会全部杀掉。
+pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。  </description>
+    </item>
+    
+    <item>
+      <title>Linux命令pgrep</title>
+      <link>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pgrep/</link>
+      <pubDate>Fri, 01 Nov 2019 15:30:37 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pgrep/</guid>
+      <description>https://man.linuxde.net/pgrep
+pgrep (选项) (参数) -o：仅显示找到的最小（起始）进程号； -n：仅显示找到的最大（结束）进程号； -l：显示进程名称； -P：指定父进程号； -g：指定进程组； -t：指定开启进程的终端； -u：指定进程的有效用户ID。  </description>
+    </item>
     
     <item>
       <title>Mysql创建用户</title>
