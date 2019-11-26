@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 01 Nov 2019 15:47:45 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 17:35:32 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>Linux</title>
       <link>https://caiwp.github.io/tags/linux/</link>
-      <pubDate>Fri, 01 Nov 2019 15:47:45 +0800</pubDate>
+      <pubDate>Tue, 26 Nov 2019 17:35:32 +0800</pubDate>
       
       <guid>https://caiwp.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Go</title>
+      <link>https://caiwp.github.io/tags/go/</link>
+      <pubDate>Tue, 12 Nov 2019 10:25:55 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>笔记</title>
       <link>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Fri, 01 Nov 2019 15:47:45 +0800</pubDate>
+      <pubDate>Tue, 12 Nov 2019 10:25:55 +0800</pubDate>
       
       <guid>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
@@ -35,15 +44,6 @@
       <pubDate>Thu, 31 Oct 2019 17:53:45 +0800</pubDate>
       
       <guid>https://caiwp.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://caiwp.github.io/tags/go/</link>
-      <pubDate>Thu, 31 Oct 2019 16:11:19 +0800</pubDate>
-      
-      <guid>https://caiwp.github.io/tags/go/</guid>
       <description></description>
     </item>
     

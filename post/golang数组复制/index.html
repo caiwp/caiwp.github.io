@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   
-    <title>Linux命令pkill :: Terminal — My blog</title>
+    <title>Golang数组复制 :: Terminal — My blog</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="https://man.linuxde.net/pkill
-pkill命令可以按照进程名杀死进程。会全部杀掉。
-pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。  "/>
+<meta name="description" content="参考链接 https://www.geeksforgeeks.org/how-to-copy-an-array-into-another-array-in-golang/
+// creating a copy of an array by value arr := arr1 // Creating a copy of an array by reference arr := &amp;amp;arr1  两种方式结果不一样，第一种原值不变，第二种会导致原值也跟着改变"/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pkill/" />
+<link rel="canonical" href="https://caiwp.github.io/post/golang%E6%95%B0%E7%BB%84%E5%A4%8D%E5%88%B6/" />
 
 
 <link rel="stylesheet" href="https://caiwp.github.io/assets/style.css">
@@ -28,10 +27,9 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Linux命令pkill :: Terminal — My blog" />
-<meta name="twitter:description" content="https://man.linuxde.net/pkill
-pkill命令可以按照进程名杀死进程。会全部杀掉。
-pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。  " />
+<meta name="twitter:title" content="Golang数组复制 :: Terminal — My blog" />
+<meta name="twitter:description" content="参考链接 https://www.geeksforgeeks.org/how-to-copy-an-array-into-another-array-in-golang/
+// creating a copy of an array by value arr := arr1 // Creating a copy of an array by reference arr := &amp;amp;arr1  两种方式结果不一样，第一种原值不变，第二种会导致原值也跟着改变" />
 <meta name="twitter:site" content="https://caiwp.github.io" />
 <meta name="twitter:creator" content="WenpiCai" />
 <meta name="twitter:image" content="">
@@ -39,17 +37,16 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Linux命令pkill :: Terminal — My blog">
-<meta property="og:description" content="https://man.linuxde.net/pkill
-pkill命令可以按照进程名杀死进程。会全部杀掉。
-pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信号； -n：仅向找到的最大（结束）进程号发送信号； -P：指定父进程号发送信号； -g：指定进程组； -t：指定开启进程的终端。  " />
-<meta property="og:url" content="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pkill/" />
-<meta property="og:site_name" content="Linux命令pkill" />
+<meta property="og:title" content="Golang数组复制 :: Terminal — My blog">
+<meta property="og:description" content="参考链接 https://www.geeksforgeeks.org/how-to-copy-an-array-into-another-array-in-golang/
+// creating a copy of an array by value arr := arr1 // Creating a copy of an array by reference arr := &amp;amp;arr1  两种方式结果不一样，第一种原值不变，第二种会导致原值也跟着改变" />
+<meta property="og:url" content="https://caiwp.github.io/post/golang%E6%95%B0%E7%BB%84%E5%A4%8D%E5%88%B6/" />
+<meta property="og:site_name" content="Golang数组复制" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2019-11-01 15:47:45 &#43;0800 CST" />
+<meta property="article:published_time" content="2019-11-07 10:44:54 &#43;0800 CST" />
 
 
 
@@ -112,11 +109,11 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pkill/">Linux命令pkill</a></h1>
+    <a href="https://caiwp.github.io/post/golang%E6%95%B0%E7%BB%84%E5%A4%8D%E5%88%B6/">Golang数组复制</a></h1>
   <div class="post-meta">
       
     <span class="post-date">
-      2019-11-01
+      2019-11-07
     </span>
     
     
@@ -131,7 +128,7 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
     
     #<a href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
     
-    #<a href="https://caiwp.github.io/tags/linux/">Linux</a>&nbsp;
+    #<a href="https://caiwp.github.io/tags/go/">Go</a>&nbsp;
     
   </span>
   
@@ -139,17 +136,16 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
   
 
   <div class="post-content">
-    <p><a href="https://man.linuxde.net/pkill">https://man.linuxde.net/pkill</a></p>
+    <p>参考链接 <a href="https://www.geeksforgeeks.org/how-to-copy-an-array-into-another-array-in-golang/">https://www.geeksforgeeks.org/how-to-copy-an-array-into-another-array-in-golang/</a></p>
 
-<p><strong>pkill命令</strong>可以按照进程名杀死进程。会全部杀掉。</p>
+<pre><code class="language-go">// creating a copy of an array by value
+arr := arr1
 
-<pre><code class="language-bash">pkill (选项) (参数)
--o：仅向找到的最小（起始）进程号发送信号；
--n：仅向找到的最大（结束）进程号发送信号；
--P：指定父进程号发送信号；
--g：指定进程组；
--t：指定开启进程的终端。
+// Creating a copy of an array by reference
+arr := &amp;arr1
 </code></pre>
+
+<p>两种方式结果不一样，第一种原值不变，第二种会导致原值也跟着改变</p>
 
   </div>
   
@@ -162,16 +158,16 @@ pkill (选项) (参数) -o：仅向找到的最小（起始）进程号发送信
     <div class="pagination__buttons">
       
       <span class="button previous">
-        <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4awk/">
+        <a href="https://caiwp.github.io/post/golang%E6%95%B4%E6%95%B0%E8%8C%83%E5%9B%B4/">
           <span class="button__icon">←</span>
-          <span class="button__text">Linux命令awk</span>
+          <span class="button__text">Golang整数范围</span>
         </a>
       </span>
       
       
       <span class="button next">
-        <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4pgrep/">
-          <span class="button__text">Linux命令pgrep</span>
+        <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4sort/">
+          <span class="button__text">Linux命令sort</span>
           <span class="button__icon">→</span>
         </a>
       </span>
