@@ -6,10 +6,26 @@
     <description>Recent content in Posts on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 Nov 2019 17:35:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2019 14:47:34 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记goroutine泄露</title>
+      <link>https://caiwp.github.io/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/</link>
+      <pubDate>Mon, 23 Dec 2019 14:47:34 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/</guid>
+      <description>程序说明 监听 TCP 与 UDP 服务，TCP 服务保持客户端长连接，UDP 服务由业务端调用发消息到客户端。
+发现问题 通过监控系统发现 goroutine 数量居高不下，正常情况下是一个用户一个 goroutine 才是，明显出现了异常情况。
+定位问题 这种情况应该是次 goroutine 泄露现象，需要知道哪个位置导致的。
+初步猜测 TCP 连接断开重连导致，翻看日志，看到存在很多高频率重连，只是不符合导致暴涨现象。
+回头直接看 goroutine 占用情况，方式 https://caiwp.github.io/post/golang利用pprof定位问题/
+原因也就一目了然，是 UDP 服务发全服消息时调用的 goroutine 无法执行结束。
+上代码
+// Handle 执行 func (t *UdpTransport) Handle(ctx context.Context, addr net.Addr, reader *Reader) { ctx, cancel := context.WithTimeout(ctx, 5*time.Second) defer cancel() ch := make(chan struct{}, 0) go func() { t.run(ctx, addr, reader) ch &amp;lt;- struct{}{} // ERROR 会堵在这 }() select { case &amp;lt;-ch: case &amp;lt;-ctx.</description>
+    </item>
     
     <item>
       <title>Mac制作linux启动盘</title>
@@ -61,7 +77,7 @@ The germane part:
       
       <guid>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4awk/</guid>
       <description>参考链接 https://www.runoob.com/linux/linux-comm-awk.html
-每行按空格或TAB分割，输出文本中的1、4项 awk &#39;{print $1,$4}&#39; log.txt 使用&amp;quot;,&amp;quot;分割 awk -F, &#39;{print $1,$2}&#39; log.txt  </description>
+每行按空格或TAB分割，输出文本中的1、4项 awk &#39;{print $1,$4}&#39; log.txt 使用&amp;quot;,&amp;quot;分割 awk -F, &#39;{print $1,$2}&#39; log.txt if 条件 awk &#39;{if ($1==1) print &amp;quot;A&amp;quot;; else if ($1==2) print &amp;quot;B&amp;quot;; else print &amp;quot;C&amp;quot;}&#39;  </description>
     </item>
     
     <item>

@@ -117,6 +117,52 @@
   
   <div class="post on-list">
     <h1 class="post-title">
+      <a href="https://caiwp.github.io/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/">记goroutine泄露</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2019-12-23
+      </span>
+      <span class="post-author">::
+        WenpiCai</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://caiwp.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>&nbsp;
+      
+      #<a href="https://caiwp.github.io/tags/go/">Go</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      程序说明 监听 TCP 与 UDP 服务，TCP 服务保持客户端长连接，UDP 服务由业务端调用发消息到客户端。
+发现问题 通过监控系统发现 goroutine 数量居高不下，正常情况下是一个用户一个 goroutine 才是，明显出现了异常情况。
+定位问题 这种情况应该是次 goroutine 泄露现象，需要知道哪个位置导致的。
+初步猜测 TCP 连接断开重连导致，翻看日志，看到存在很多高频率重连，只是不符合导致暴涨现象。
+回头直接看 goroutine 占用情况，方式 <a href="https://caiwp.github.io/post/golang利用pprof定位问题/">https://caiwp.github.io/post/golang利用pprof定位问题/</a>
+原因也就一目了然，是 UDP 服务发全服消息时调用的 goroutine 无法执行结束。
+上代码
+// Handle 执行 func (t *UdpTransport) Handle(ctx context.Context, addr net.Addr, reader *Reader) { ctx, cancel := context.WithTimeout(ctx, 5*time.Second) defer cancel() ch := make(chan struct{}, 0) go func() { t.run(ctx, addr, reader) ch &lt;- struct{}{} // ERROR 会堵在这 }() select { case &lt;-ch: case &lt;-ctx.
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
       <a href="https://caiwp.github.io/post/golang%E6%95%B4%E6%95%B0%E8%8C%83%E5%9B%B4/">Golang整数范围</a></h1>
     <div class="post-meta">
       <span class="post-date">

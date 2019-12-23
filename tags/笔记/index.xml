@@ -52,7 +52,7 @@ The germane part:
       
       <guid>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4awk/</guid>
       <description>参考链接 https://www.runoob.com/linux/linux-comm-awk.html
-每行按空格或TAB分割，输出文本中的1、4项 awk &#39;{print $1,$4}&#39; log.txt 使用&amp;quot;,&amp;quot;分割 awk -F, &#39;{print $1,$2}&#39; log.txt  </description>
+每行按空格或TAB分割，输出文本中的1、4项 awk &#39;{print $1,$4}&#39; log.txt 使用&amp;quot;,&amp;quot;分割 awk -F, &#39;{print $1,$2}&#39; log.txt if 条件 awk &#39;{if ($1==1) print &amp;quot;A&amp;quot;; else if ($1==2) print &amp;quot;B&amp;quot;; else print &amp;quot;C&amp;quot;}&#39;  </description>
     </item>
     
     <item>
