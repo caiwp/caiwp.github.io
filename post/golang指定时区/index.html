@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Golang指定时区 :: Terminal — My blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
+//init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  "/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/" />
+
+
+<link rel="stylesheet" href="https://caiwp.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://caiwp.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://caiwp.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Golang指定时区 :: Terminal — My blog" />
+<meta name="twitter:description" content="参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
+//init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  " />
+<meta name="twitter:site" content="https://caiwp.github.io" />
+<meta name="twitter:creator" content="WenpiCai" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Golang指定时区 :: Terminal — My blog">
+<meta property="og:description" content="参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
+//init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  " />
+<meta property="og:url" content="https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/" />
+<meta property="og:site_name" content="Golang指定时区" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-04-07 16:54:04 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/">Golang指定时区</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-04-07
+    </span>
+    
+    
+    <span class="post-author">::
+      WenpiCai
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+    
+    #<a href="https://caiwp.github.io/tags/go/">Go</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    <p>参考链接 <a href="https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang">https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang</a></p>
+
+<pre><code class="language-golang">//init the loc
+loc, _ := time.LoadLocation(&quot;Asia/Shanghai&quot;)
+
+//set timezone,  
+now := time.Now().In(loc)
+</code></pre>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://caiwp.github.io/post/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4/">
+          <span class="button__icon">←</span>
+          <span class="button__text">快速删除</span>
+        </a>
+      </span>
+      
+      
+      <span class="button next">
+        <a href="https://caiwp.github.io/post/%E4%B8%89%E5%8D%81%E5%A4%9A/">
+          <span class="button__text">三十多</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://caiwp.github.io/assets/main.js"></script>
+<script src="https://caiwp.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

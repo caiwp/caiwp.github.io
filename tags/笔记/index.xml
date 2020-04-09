@@ -6,10 +6,43 @@
     <description>Recent content in 笔记 on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Dec 2019 15:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 17:57:16 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git推送多个仓库</title>
+      <link>https://caiwp.github.io/post/git%E6%8E%A8%E9%80%81%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 09 Apr 2020 17:57:16 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/git%E6%8E%A8%E9%80%81%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93/</guid>
+      <description>参考链接 https://segmentfault.com/a/1190000011294144
+git remote -v git remote add xxxx http://gogit.oa.com/WenpiCai/sicbo.git git push -u xxxx master  </description>
+    </item>
+    
+    <item>
+      <title>快速删除</title>
+      <link>https://caiwp.github.io/post/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4/</link>
+      <pubDate>Thu, 09 Apr 2020 11:17:37 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4/</guid>
+      <description>参考链接 https://blog.csdn.net/liuxiao723846/article/details/51626305
+1）先建立一个空目录
+mkdir/data/blank
+2）用rsync删除目标目录
+rsync &amp;ndash;delete-before -d /data/blank/ /var/spool/clientmqueue/</description>
+    </item>
+    
+    <item>
+      <title>Golang指定时区</title>
+      <link>https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/</link>
+      <pubDate>Tue, 07 Apr 2020 16:54:04 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/</guid>
+      <description>参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
+//init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  </description>
+    </item>
     
     <item>
       <title>Golang信号发送与接收</title>

@@ -6,10 +6,20 @@
     <description>Recent content in Go on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Dec 2019 15:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 16:54:04 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang指定时区</title>
+      <link>https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/</link>
+      <pubDate>Tue, 07 Apr 2020 16:54:04 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/</guid>
+      <description>参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
+//init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  </description>
+    </item>
     
     <item>
       <title>Golang信号发送与接收</title>
