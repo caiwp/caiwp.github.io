@@ -6,10 +6,42 @@
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Apr 2020 17:57:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 15:20:54 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sed命令</title>
+      <link>https://caiwp.github.io/post/sed%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 08 May 2020 15:20:54 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/sed%E5%91%BD%E4%BB%A4/</guid>
+      <description>参考链接 https://www.runoob.com/linux/linux-comm-sed.html
+直接替换文件内容 sed -i &#39;s/108/581/g&#39; *.json 在每行的头添加字符，比如&amp;quot;HEAD&amp;quot;，命令如下： sed &#39;s/^/HEAD&amp;amp;/g&#39; test.file 在每行的行尾添加字符，比如“TAIL”，命令如下： sed &#39;s/$/&amp;amp;TAIL/g&#39; test.file 替换第2个值 sed -i &#39;s/108/581/2&#39; test.sh  </description>
+    </item>
+    
+    <item>
+      <title>Git提交规范</title>
+      <link>https://caiwp.github.io/post/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 22 Apr 2020 17:54:52 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</guid>
+      <description>参考链接 https://juejin.im/post/5afc5242f265da0b7f44bee4
+type: commit 的类型 feat: 新特性 fix: 修改问题 refactor: 代码重构 docs: 文档修改 style: 代码格式修改, 注意不是 css 修改 test: 测试用例修改 chore: 其他修改, 比如构建流程, 依赖管理. scope: commit 影响的范围, 比如: route, component, utils, build... subject: commit 的概述, 建议符合 [50/72 formatting](https://link.zhihu.com/?target=https%3A//stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting) body: commit 具体修改内容, 可以分为多行, 建议符合 [50/72 formatting](https://link.zhihu.com/?target=https%3A//stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting) footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.  </description>
+    </item>
+    
+    <item>
+      <title>Goroutine请求TCP返回读取问题</title>
+      <link>https://caiwp.github.io/post/goroutine%E8%AF%B7%E6%B1%82tcp%E8%BF%94%E5%9B%9E%E8%AF%BB%E5%8F%96%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 17 Apr 2020 15:16:48 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/goroutine%E8%AF%B7%E6%B1%82tcp%E8%BF%94%E5%9B%9E%E8%AF%BB%E5%8F%96%E9%97%AE%E9%A2%98/</guid>
+      <description>场景：
+0、本服务是一个 TCP 服务监听接收请求 1、需要与某个远程服务建立 TCP 连接。 2、建立唯一的客户端C并保持连接。 3、多个请求与本服务建立 TCP 连接产生多个 goroutine。 4、当 goroutine 需要涉及到远程服务调用客户端C进行 Write 和 Read 操作。每个应当是独立不干扰的。 5、出现 Read 操作时数据并不按预期返回，随着 goroutine 数量增多出现概率变大。  定位问题：应该是多goroutine并发读取socket缓冲区数据导致。
+解决：
+A、设想通过 channel 来避免并发。复杂度增加，需要对应将结果与请求对应，并且个别地方是阻塞请求。 B、加锁控制。简单粗暴，加好超时控制避免死锁情况。  </description>
+    </item>
     
     <item>
       <title>Git推送多个仓库</title>
@@ -42,23 +74,6 @@ rsync &amp;ndash;delete-before -d /data/blank/ /var/spool/clientmqueue/</descrip
       <guid>https://caiwp.github.io/post/golang%E6%8C%87%E5%AE%9A%E6%97%B6%E5%8C%BA/</guid>
       <description>参考链接 https://stackoverflow.com/questions/27991671/how-to-get-the-current-timestamp-in-other-timezones-in-golang
 //init the loc loc, _ := time.LoadLocation(&amp;quot;Asia/Shanghai&amp;quot;) //set timezone, now := time.Now().In(loc)  </description>
-    </item>
-    
-    <item>
-      <title>三十多</title>
-      <link>https://caiwp.github.io/post/%E4%B8%89%E5%8D%81%E5%A4%9A/</link>
-      <pubDate>Tue, 07 Jan 2020 23:08:02 +0800</pubDate>
-      
-      <guid>https://caiwp.github.io/post/%E4%B8%89%E5%8D%81%E5%A4%9A/</guid>
-      <description>三十多 为什么用这个命题，可能是因为时间概念愈发强烈了，感觉就像你即使站在火车尾部，丝毫没阻碍你的前行，倒带一般的回望已往种种，也就嘘嘘一番了。
-三十多岁，具体多少不想算也不敢算，因为算得再清楚也只是结果“哦，原来这么多了”。
-已经不允许像二十多一样洒脱了，但却又无可奈何地接受，人生进入了又一个压抑自我阶段。身边更多的是90后，现在还只是2020年，所以他们仍未三十。
-古人所谓的“三十而立”现今已经行不通了，很多东西觉醒得越快，三十也差不多摸上“不惑”的车票了。有时候感觉懂得越多越难过，毕竟在改变不了环境的时候只好改变自己。
-有种感觉自己被磨灭掉希望，一种对于生活与社会的希望，满腔热血这个形容词是什么体会呢？这种感觉相信不只是我一个人的，毕竟我只是平庸之一。金钱社会谁来指明是与非，真是个笑话，还抱有着希望。
-预感需要一种信念来支撑，不能只是简单的随波逐流，却有时想要的只是能够跟上时代潮流，避免被淘汰。现在靠着所谓的技术吃饭也不知道还能前行多久，种种社会现象表明并非你不可以，是因为“他们”觉得你不可以了。资本家有钱所以说的都对，只是让你听，不听那你走，多简单的选择题啊。
-焦虑，当前这“85”前的领导整天的观念是离开了这里找不到工作了。其实他要不找工作更好，找几个mei老板多好啊，他缺的不是本事，缺的是mei老板。
-这是三十多后写的第一篇，记录一个贫瘠的自己。
-坚持、努力、方向，送给未来几年的自己，希望回头审视自我时仍有丝丝满足。</description>
     </item>
     
     <item>

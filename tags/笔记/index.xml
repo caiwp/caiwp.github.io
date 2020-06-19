@@ -6,10 +6,42 @@
     <description>Recent content in 笔记 on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Apr 2020 17:57:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 15:20:54 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sed命令</title>
+      <link>https://caiwp.github.io/post/sed%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 08 May 2020 15:20:54 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/sed%E5%91%BD%E4%BB%A4/</guid>
+      <description>参考链接 https://www.runoob.com/linux/linux-comm-sed.html
+直接替换文件内容 sed -i &#39;s/108/581/g&#39; *.json 在每行的头添加字符，比如&amp;quot;HEAD&amp;quot;，命令如下： sed &#39;s/^/HEAD&amp;amp;/g&#39; test.file 在每行的行尾添加字符，比如“TAIL”，命令如下： sed &#39;s/$/&amp;amp;TAIL/g&#39; test.file 替换第2个值 sed -i &#39;s/108/581/2&#39; test.sh  </description>
+    </item>
+    
+    <item>
+      <title>Git提交规范</title>
+      <link>https://caiwp.github.io/post/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 22 Apr 2020 17:54:52 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</guid>
+      <description>参考链接 https://juejin.im/post/5afc5242f265da0b7f44bee4
+type: commit 的类型 feat: 新特性 fix: 修改问题 refactor: 代码重构 docs: 文档修改 style: 代码格式修改, 注意不是 css 修改 test: 测试用例修改 chore: 其他修改, 比如构建流程, 依赖管理. scope: commit 影响的范围, 比如: route, component, utils, build... subject: commit 的概述, 建议符合 [50/72 formatting](https://link.zhihu.com/?target=https%3A//stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting) body: commit 具体修改内容, 可以分为多行, 建议符合 [50/72 formatting](https://link.zhihu.com/?target=https%3A//stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting) footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.  </description>
+    </item>
+    
+    <item>
+      <title>Goroutine请求TCP返回读取问题</title>
+      <link>https://caiwp.github.io/post/goroutine%E8%AF%B7%E6%B1%82tcp%E8%BF%94%E5%9B%9E%E8%AF%BB%E5%8F%96%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 17 Apr 2020 15:16:48 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/goroutine%E8%AF%B7%E6%B1%82tcp%E8%BF%94%E5%9B%9E%E8%AF%BB%E5%8F%96%E9%97%AE%E9%A2%98/</guid>
+      <description>场景：
+0、本服务是一个 TCP 服务监听接收请求 1、需要与某个远程服务建立 TCP 连接。 2、建立唯一的客户端C并保持连接。 3、多个请求与本服务建立 TCP 连接产生多个 goroutine。 4、当 goroutine 需要涉及到远程服务调用客户端C进行 Write 和 Read 操作。每个应当是独立不干扰的。 5、出现 Read 操作时数据并不按预期返回，随着 goroutine 数量增多出现概率变大。  定位问题：应该是多goroutine并发读取socket缓冲区数据导致。
+解决：
+A、设想通过 channel 来避免并发。复杂度增加，需要对应将结果与请求对应，并且个别地方是阻塞请求。 B、加锁控制。简单粗暴，加好超时控制避免死锁情况。  </description>
+    </item>
     
     <item>
       <title>Git推送多个仓库</title>
