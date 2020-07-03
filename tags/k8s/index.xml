@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>k8s on Terminal</title>
+    <link>https://caiwp.github.io/tags/k8s/</link>
+    <description>Recent content in k8s on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 03 Jul 2020 16:06:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://caiwp.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac启动k8s</title>
+      <link>https://caiwp.github.io/post/mac%E5%90%AF%E5%8A%A8k8s/</link>
+      <pubDate>Fri, 03 Jul 2020 16:06:33 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/mac%E5%90%AF%E5%8A%A8k8s/</guid>
+      <description> 参考链接 https://juejin.im/post/5d87980f5188253f74438bb6
+启动 docker mac desktop 已经自带 k8s，设置成启动就可。
+web 查看dashboard https://github.com/kubernetes/dashboard
+# 查看 token 用于登录 kubectl -n kube-system describe secret default| awk &#39;$1==&amp;quot;token:&amp;quot;{print $2}&#39;  </description>
+    </item>
+    
+  </channel>
+</rss>
