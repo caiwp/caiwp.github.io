@@ -117,6 +117,84 @@
   
   <div class="post on-list">
     <h1 class="post-title">
+      <a href="https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/">Redis源码翻阅记录</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2020-07-16
+      </span>
+      <span class="post-author">::
+        WenpiCai</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://caiwp.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>&nbsp;
+      
+      #<a href="https://caiwp.github.io/tags/redis/">redis</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      准备工作 源码 仓库 <a href="https://github.com/antirez/redis.git">https://github.com/antirez/redis.git</a> 分支 git:remotes/origin/6.0 git clone -b 6.0 <a href="https://github.com/redis/redis.git">https://github.com/redis/redis.git</a>  工具 Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择） VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）  阶段一 粗读  代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。
+ 重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。
+  结论 大体应该有以下几块： 事件 配置 数据类型：对外支持的，底层实现的。（大量代码） 网络 集群 哨兵 数据持久化 日记 服务端入口 src/server.c (突破口) 客户端入口 src/redis-cli.c  阶段二 src/server.c initServerConfig serverCron 定时任务 beforeSleep afterSleep restartServer 做好收尾工作，另执行启动，退出 listenToPort 监听TCP服务 initServer sigShutdownHandler 监听信号关闭操作 adjustOpenFilesLimit InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。 call 执行客户端的具体命令 processCommand 分发客户端命令  阶段三 发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
+      <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4nc/">Linux命令nc</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2020-07-09
+      </span>
+      <span class="post-author">::
+        WenpiCai</span>
+    </div>
+
+    
+    <span class="post-tags">
+      
+      #<a href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+      
+      #<a href="https://caiwp.github.io/tags/linux/">Linux</a>&nbsp;
+      
+    </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      
+      
+    </div>
+
+    
+    <div>
+      <a class="read-more button"
+        href="/post/linux%E5%91%BD%E4%BB%A4nc/">Read more →</a>
+    </div>
+    
+  </div>
+  
+  <div class="post on-list">
+    <h1 class="post-title">
       <a href="https://caiwp.github.io/post/mac%E5%90%AF%E5%8A%A8k8s/">Mac启动k8s</a></h1>
     <div class="post-meta">
       <span class="post-date">
@@ -403,87 +481,6 @@
     <div>
       <a class="read-more button"
         href="/post/golang%E4%BF%A1%E5%8F%B7%E5%8F%91%E9%80%81%E4%B8%8E%E6%8E%A5%E6%94%B6/">Read more →</a>
-    </div>
-    
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://caiwp.github.io/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/">记goroutine泄露</a></h1>
-    <div class="post-meta">
-      <span class="post-date">
-        2019-12-23
-      </span>
-      <span class="post-author">::
-        WenpiCai</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="https://caiwp.github.io/tags/%E5%BC%80%E5%8F%91/">开发</a>&nbsp;
-      
-      #<a href="https://caiwp.github.io/tags/go/">Go</a>&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      
-      
-      程序说明 监听 TCP 与 UDP 服务，TCP 服务保持客户端长连接，UDP 服务由业务端调用发消息到客户端。
-发现问题 通过监控系统发现 goroutine 数量居高不下，正常情况下是一个用户一个 goroutine 才是，明显出现了异常情况。
-定位问题 这种情况应该是次 goroutine 泄露现象，需要知道哪个位置导致的。
-初步猜测 TCP 连接断开重连导致，翻看日志，看到存在很多高频率重连，只是不符合导致暴涨现象。
-回头直接看 goroutine 占用情况，方式 <a href="https://caiwp.github.io/post/golang利用pprof定位问题/">https://caiwp.github.io/post/golang利用pprof定位问题/</a>
-原因也就一目了然，是 UDP 服务发全服消息时调用的 goroutine 无法执行结束。
-上代码
-// Handle 执行 func (t *UdpTransport) Handle(ctx context.Context, addr net.Addr, reader *Reader) { ctx, cancel := context.WithTimeout(ctx, 5*time.Second) defer cancel() ch := make(chan struct{}, 0) go func() { t.run(ctx, addr, reader) ch &lt;- struct{}{} // ERROR 会堵在这 }() select { case &lt;-ch: case &lt;-ctx.
-      
-      
-    </div>
-
-    
-    <div>
-      <a class="read-more button"
-        href="/post/%E8%AE%B0goroutine%E6%B3%84%E9%9C%B2/">Read more →</a>
-    </div>
-    
-  </div>
-  
-  <div class="post on-list">
-    <h1 class="post-title">
-      <a href="https://caiwp.github.io/post/mac%E5%88%B6%E4%BD%9Clinux%E5%90%AF%E5%8A%A8%E7%9B%98/">Mac制作linux启动盘</a></h1>
-    <div class="post-meta">
-      <span class="post-date">
-        2019-11-26
-      </span>
-      <span class="post-author">::
-        WenpiCai</span>
-    </div>
-
-    
-    <span class="post-tags">
-      
-      #<a href="https://caiwp.github.io/tags/linux/">Linux</a>&nbsp;
-      
-    </span>
-    
-
-    
-
-    <div class="post-content">
-      
-      
-      
-    </div>
-
-    
-    <div>
-      <a class="read-more button"
-        href="/post/mac%E5%88%B6%E4%BD%9Clinux%E5%90%AF%E5%8A%A8%E7%9B%98/">Read more →</a>
     </div>
     
   </div>

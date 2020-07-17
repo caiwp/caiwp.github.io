@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Redis源码翻阅记录 :: Terminal — My blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="准备工作 源码 仓库 https://github.com/antirez/redis.git 分支 git:remotes/origin/6.0 git clone -b 6.0 https://github.com/redis/redis.git  工具 Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择） VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）  阶段一 粗读  代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。
+ 重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。
+  结论 大体应该有以下几块： 事件 配置 数据类型：对外支持的，底层实现的。（大量代码） 网络 集群 哨兵 数据持久化 日记 服务端入口 src/server.c (突破口) 客户端入口 src/redis-cli.c  阶段二 src/server.c initServerConfig serverCron 定时任务 beforeSleep afterSleep restartServer 做好收尾工作，另执行启动，退出 listenToPort 监听TCP服务 initServer sigShutdownHandler 监听信号关闭操作 adjustOpenFilesLimit InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。 call 执行客户端的具体命令 processCommand 分发客户端命令  阶段三 发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/" />
+
+
+<link rel="stylesheet" href="https://caiwp.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://caiwp.github.io/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="https://caiwp.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Redis源码翻阅记录 :: Terminal — My blog" />
+<meta name="twitter:description" content="准备工作 源码 仓库 https://github.com/antirez/redis.git 分支 git:remotes/origin/6.0 git clone -b 6.0 https://github.com/redis/redis.git  工具 Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择） VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）  阶段一 粗读  代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。
+ 重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。
+  结论 大体应该有以下几块： 事件 配置 数据类型：对外支持的，底层实现的。（大量代码） 网络 集群 哨兵 数据持久化 日记 服务端入口 src/server.c (突破口) 客户端入口 src/redis-cli.c  阶段二 src/server.c initServerConfig serverCron 定时任务 beforeSleep afterSleep restartServer 做好收尾工作，另执行启动，退出 listenToPort 监听TCP服务 initServer sigShutdownHandler 监听信号关闭操作 adjustOpenFilesLimit InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。 call 执行客户端的具体命令 processCommand 分发客户端命令  阶段三 发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。" />
+<meta name="twitter:site" content="https://caiwp.github.io" />
+<meta name="twitter:creator" content="WenpiCai" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Redis源码翻阅记录 :: Terminal — My blog">
+<meta property="og:description" content="准备工作 源码 仓库 https://github.com/antirez/redis.git 分支 git:remotes/origin/6.0 git clone -b 6.0 https://github.com/redis/redis.git  工具 Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择） VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）  阶段一 粗读  代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。
+ 重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。
+  结论 大体应该有以下几块： 事件 配置 数据类型：对外支持的，底层实现的。（大量代码） 网络 集群 哨兵 数据持久化 日记 服务端入口 src/server.c (突破口) 客户端入口 src/redis-cli.c  阶段二 src/server.c initServerConfig serverCron 定时任务 beforeSleep afterSleep restartServer 做好收尾工作，另执行启动，退出 listenToPort 监听TCP服务 initServer sigShutdownHandler 监听信号关闭操作 adjustOpenFilesLimit InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。 call 执行客户端的具体命令 processCommand 分发客户端命令  阶段三 发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。" />
+<meta property="og:url" content="https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/" />
+<meta property="og:site_name" content="Redis源码翻阅记录" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-07-16 11:01:18 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/">Redis源码翻阅记录</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-07-16
+    </span>
+    
+    
+    <span class="post-author">::
+      WenpiCai
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://caiwp.github.io/tags/%E6%BA%90%E7%A0%81/">源码</a>&nbsp;
+    
+    #<a href="https://caiwp.github.io/tags/redis/">redis</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  <div class="post-content">
+    
+
+<h2 id="准备工作">准备工作</h2>
+
+<h3 id="源码">源码</h3>
+
+<pre><code class="language-bash">仓库 https://github.com/antirez/redis.git
+分支 git:remotes/origin/6.0
+git clone -b 6.0 https://github.com/redis/redis.git
+</code></pre>
+
+<h3 id="工具">工具</h3>
+
+<pre><code>Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择）
+VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）
+</code></pre>
+
+<h2 id="阶段一">阶段一</h2>
+
+<h3 id="粗读">粗读</h3>
+
+<ul>
+<li><p>代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。</p></li>
+
+<li><p>重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。</p></li>
+</ul>
+
+<h3 id="结论">结论</h3>
+
+<pre><code>大体应该有以下几块：
+事件
+配置
+数据类型：对外支持的，底层实现的。（大量代码）
+网络
+集群
+哨兵
+数据持久化
+日记
+
+服务端入口 src/server.c (突破口)
+客户端入口 src/redis-cli.c
+</code></pre>
+
+<h2 id="阶段二">阶段二</h2>
+
+<h3 id="src-server-c">src/server.c</h3>
+
+<pre><code>initServerConfig
+serverCron 定时任务
+beforeSleep 
+afterSleep
+restartServer 做好收尾工作，另执行启动，退出
+listenToPort 监听TCP服务
+initServer
+sigShutdownHandler 监听信号关闭操作
+adjustOpenFilesLimit 
+InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。
+call 执行客户端的具体命令
+processCommand 分发客户端命令
+</code></pre>
+
+<h2 id="阶段三">阶段三</h2>
+
+<p>发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。</p>
+
+<p>git clone -b 3.2 <a href="https://github.com/redis/redis.git">https://github.com/redis/redis.git</a></p>
+
+<h3 id="src-server-c-1">src/server.c</h3>
+
+<pre><code>initServer
+</code></pre>
+
+<p>###src/networking.c</p>
+
+<pre><code>acceptTcpHandler
+acceptCommonHandler 调用创建客户端
+createClient 创建客户端并启用事件监听 3.2和6.0区别大 3.2会将读取交到文件事件里面，6.0直接交到conn也就是当前线程。
+readQueryFromClient 读取数据给客户端
+processInputBuffer 分发客户端命令前的验证
+</code></pre>
+
+<p>###src/connection.c (3.2没有) 将每个客户端使用独立的线程连接，多线程</p>
+
+<pre><code>connSocketSetReadHandler 连接读取操作
+</code></pre>
+
+<h3 id="src-ae-c">src/ae.c</h3>
+
+<pre><code>aeProcessEvents 事件处理 https://draveness.me/redis-eventloop/
+</code></pre>
+
+<p>附 Redis 和 I/O 多路复用 <a href="https://draveness.me/redis-io-multiplexing/">https://draveness.me/redis-io-multiplexing/</a></p>
+
+<h3 id="结论-1">结论</h3>
+
+<pre><code>通过对比 3.2 与 6.0分析其中单线程与多线程有区别点：单线程主要依赖文件事件来实现，配合I/O多路复用来读取客户端的请求数据。多线程则每个客户端有独立的连接独立线程，只要读取其连接请求数据即可。
+</code></pre>
+
+<h3 id="疑问-线程安全">疑问：线程安全？</h3>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4nc/">
+          <span class="button__text">Linux命令nc</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://caiwp.github.io/assets/main.js"></script>
+<script src="https://caiwp.github.io/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

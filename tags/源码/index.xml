@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>源码 on Terminal</title>
+    <link>https://caiwp.github.io/tags/%E6%BA%90%E7%A0%81/</link>
+    <description>Recent content in 源码 on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Jul 2020 11:01:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://caiwp.github.io/tags/%E6%BA%90%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis源码翻阅记录</title>
+      <link>https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 16 Jul 2020 11:01:18 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/redis%E6%BA%90%E7%A0%81%E7%BF%BB%E9%98%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>准备工作 源码 仓库 https://github.com/antirez/redis.git 分支 git:remotes/origin/6.0 git clone -b 6.0 https://github.com/redis/redis.git  工具 Vim 优点：阅读内容一目了然，只键盘操作快捷。劣势：跳转较弱，会占用终端，用tmux来解决阅读节点，但感觉容易混淆。（刚开始选择） VS Code 优点：插件较自动化，跳转轻松。劣势：outline无法右边显示，触摸板翻页感觉容易失焦点。（最终选择）  阶段一 粗读  代码目录结构整理。目标：清楚整体项目，便于后面阅读定位。
+ 重点 src 目录下所有文件草读。目标：清楚文件定位，内容大致情况，得出文件重要程度，便于后面阅读重点。
+  结论 大体应该有以下几块： 事件 配置 数据类型：对外支持的，底层实现的。（大量代码） 网络 集群 哨兵 数据持久化 日记 服务端入口 src/server.c (突破口) 客户端入口 src/redis-cli.c  阶段二 src/server.c initServerConfig serverCron 定时任务 beforeSleep afterSleep restartServer 做好收尾工作，另执行启动，退出 listenToPort 监听TCP服务 initServer sigShutdownHandler 监听信号关闭操作 adjustOpenFilesLimit InitServerLast 启动多线程，每个客户端独自线程监听连接，获取请求，找到命令，调用命令。 call 执行客户端的具体命令 processCommand 分发客户端命令  阶段三 发现新版里面用上了多线程，查了一下是4.0版本后引入，决定拉回3.2版本代码进行比较。</description>
+    </item>
+    
+  </channel>
+</rss>

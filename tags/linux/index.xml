@@ -6,10 +6,22 @@
     <description>Recent content in Linux on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 May 2020 15:20:54 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2020 14:49:21 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux命令nc</title>
+      <link>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4nc/</link>
+      <pubDate>Thu, 09 Jul 2020 14:49:21 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/linux%E5%91%BD%E4%BB%A4nc/</guid>
+      <description>参考链接
+https://www.ifmicro.com/记录/2017/12/12/netcat-usage/
+https://www.runoob.com/linux/linux-comm-nc.html
+# 端口扫描 nc 127.0.0.1 -z 9320-9330  </description>
+    </item>
     
     <item>
       <title>Sed命令</title>
