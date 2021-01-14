@@ -6,10 +6,23 @@
     <description>Recent content in 笔记 on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jul 2020 14:49:21 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jan 2021 10:13:40 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang内存占用检测</title>
+      <link>https://caiwp.github.io/post/golang%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Thu, 14 Jan 2021 10:13:40 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/golang%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E6%A3%80%E6%B5%8B/</guid>
+      <description>Golang 内存占用检测 参考链接 https://lrita.github.io/2017/05/26/golang-memory-pprof/
+涉及命令 go tool pprof http://{host}/debug/pprof/heap
+缘由 同样的服务在上了多组服务器后监控显示内存 process_resident_memory_bytes 区别很大，多组服务会根据实际连接和用户情况增减，但有一组数值仍然居高不下，数据对比就是20+M和50+M。以下便找出两台作为对比定位原因。{host1}为需要检测的服务。
+命令使用 通过 go tool pprof http://{host}/debug/pprof/heap 进入查看命令行，直接输入 top 后
+[WenpiCai@LOCAL-192-168-97-55 ~]$ go tool pprof http://{host1}/debug/pprof/heap Fetching profile over HTTP from http://{host1}/debug/pprof/heap Saved profile in /home/WenpiCai/pprof/pprof.MoziGateA.alloc_objects.alloc_space.inuse_objects.inuse_space.006.pb.gz File: MoziGateA Type: inuse_space Time: Jan 14, 2021 at 10:26am (CST) Entering interactive mode (type &amp;quot;help&amp;quot; for commands, &amp;quot;o&amp;quot; for options) (pprof) top Showing nodes accounting for 5524.47kB, 100% of 5524.47kB total Showing top 10 nodes out of 41 flat flat% sum% cum cum% 1542.</description>
+    </item>
     
     <item>
       <title>Linux命令nc</title>

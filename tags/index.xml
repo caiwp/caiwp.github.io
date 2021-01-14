@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Jul 2020 11:01:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jan 2021 10:13:40 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go</title>
+      <link>https://caiwp.github.io/tags/go/</link>
+      <pubDate>Thu, 14 Jan 2021 10:13:40 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>笔记</title>
+      <link>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 14 Jan 2021 10:13:40 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>redis</title>
@@ -39,15 +57,6 @@
     </item>
     
     <item>
-      <title>笔记</title>
-      <link>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 09 Jul 2020 14:49:21 +0800</pubDate>
-      
-      <guid>https://caiwp.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>docker</title>
       <link>https://caiwp.github.io/tags/docker/</link>
       <pubDate>Fri, 03 Jul 2020 16:06:33 +0800</pubDate>
@@ -62,15 +71,6 @@
       <pubDate>Fri, 03 Jul 2020 16:06:33 +0800</pubDate>
       
       <guid>https://caiwp.github.io/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://caiwp.github.io/tags/go/</link>
-      <pubDate>Fri, 17 Apr 2020 15:16:48 +0800</pubDate>
-      
-      <guid>https://caiwp.github.io/tags/go/</guid>
       <description></description>
     </item>
     
