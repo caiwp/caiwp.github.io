@@ -6,10 +6,25 @@
     <description>Recent content on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Jan 2021 10:13:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Dec 2021 22:00:22 +0800</lastBuildDate>
     
 	<atom:link href="https://caiwp.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>再会</title>
+      <link>https://caiwp.github.io/post/%E5%86%8D%E4%BC%9A/</link>
+      <pubDate>Tue, 07 Dec 2021 22:00:22 +0800</pubDate>
+      
+      <guid>https://caiwp.github.io/post/%E5%86%8D%E4%BC%9A/</guid>
+      <description>再过三天就要结束深圳之旅了，大部分家当在上周末已转移，望着寥落的房间，些许回味。
+谢谢老司机的晚餐，说实在的这晚餐让我意外不少，毕竟这是领导的送行饭。一路骑车回来也就难得多想，想想这三年多快四年的曾经。因为只是回忆，所以还是受到当下情绪影响，或者说年纪大了的特征。
+从面的go，收的客户端offer再入职php开发，这是印象最深刻，因为毕竟挺有意思的。就工作内容而言，已经进入了舒适圈，从php到go，从业务到server，也有些时间了。回想当初第一个go写的tcp服务上线后，面对异常时的紧张感。各种小服务小游戏也写了不少，在翻交接资料时发现上线用的还是有一些，价值还是有所体现了。这过程不得不感谢领导的包容，允许我的各种尝试，因为即使再小心也免不了会有出错的时候。能留下来的也就日常面对的代码了，希望后人少些抱怨多些包容，毕竟无法尽善尽美。
+对于深圳，虽然有三年之久相处，但还是保留着那份陌生，也许因为我也只是众多过客之一，也许我就没想过探索，也许我还是与之无缘。接下来回广州，来年也就到了毕业的第十年，恍惚间没法抗拒如何。回广州主要一因素还是家庭，娃一个多月时举家来到深圳，跑了不少次HK带奶粉，连现在码的笔记本也是从那带回来的。娃成长了，我也就不得不父亲角色进入。这方面还是不写太多了，免得打脸。
+开成问我离开是什么感觉，我没直接回答，只是说到时你就知道了，是的他比我还早进半年多呢。不过我还是劝他别有这个念头，毕竟DDDD。离开舒适圈去再次面临陌生或陌生，难免有紧张感，面对挑战，不忘初心。
+高中同学跑步四人团就要缺席了，从一开始跑一圈走两圈到后来的一次性跑完三圈，成就感满满。
+江湖不大，有缘再见。</description>
+    </item>
     
     <item>
       <title>Golang内存占用检测</title>
